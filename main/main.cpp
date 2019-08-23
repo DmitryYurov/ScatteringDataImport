@@ -1,15 +1,14 @@
+#include "MainWindow.h"
 #include <QApplication>
 #include <QLocale>
-#include <QMainWindow>
 
-int main(int argc, char **argv)
-{
-    QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
+int main(int argc, char **argv) {
+  QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
 
-    QApplication app(argc, argv);
+  QApplication app(argc, argv);
 
-    QMainWindow win;
-    win.show();
+  MainWindow win;
+  win.show();
 
-    return app.exec();
+  return app.exec();
 }

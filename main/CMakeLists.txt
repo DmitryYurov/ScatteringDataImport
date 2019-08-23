@@ -13,4 +13,4 @@ foreach(dir ${include_dirs})
 endforeach()
 
 add_executable(${executable_name} ${source_files} ${include_files})
-target_link_libraries(${executable_name} Qt5::Core Qt5::Gui Qt5::Widgets)
+target_link_libraries(${executable_name} dataloader_gui)

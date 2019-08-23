@@ -12,7 +12,7 @@ include(CTest)
 include(configuration)
 
 # add_subdirectory(core)
-# add_subdirectory(GUI)
+add_subdirectory(GUI)
 add_subdirectory(main)
 add_subdirectory(thirdparty/gtest)
 add_subdirectory(thirdparty/qcustomplot)
