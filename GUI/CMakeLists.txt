@@ -1,7 +1,8 @@
 set(library_name dataloader_gui)
 
 # --- source and include files ---
-set(include_dirs ${CMAKE_CURRENT_SOURCE_DIR}/widgets)
+set(include_dirs ${CMAKE_CURRENT_SOURCE_DIR}/widgets
+                 ${CMAKE_CURRENT_SOURCE_DIR}/utilities)
 
 set(source_files)
 set(include_files)

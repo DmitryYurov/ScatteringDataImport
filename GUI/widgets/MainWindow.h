@@ -21,7 +21,8 @@ public:
   ~MainWindow() override;
 
 private:
-  void init_application();
+  void initSettings();
+  void writeSettings() const;
 };
 
 #endif // MAINWINDOW_H
