@@ -11,11 +11,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memory>
+
+class QButtonGroup;
 
 //! Application main window.
 
 class MainWindow : public QMainWindow {
-  Q_OBJECT
 public:
   MainWindow();
   ~MainWindow() override;
@@ -23,6 +25,8 @@ public:
 private:
   void initSettings();
   void writeSettings() const;
+
+  std::unique_ptr<QButtonGroup> m_type_buttons;
 };
 
 #endif // MAINWINDOW_H

@@ -9,15 +9,29 @@
 
 #include "MainWindow.h"
 #include "SettingsList.h"
+#include "TypeButtonGroup.h"
+#include <QAbstractButton>
+#include <QButtonGroup>
 #include <QCoreApplication>
 #include <QRect>
 #include <QSettings>
+#include <QVBoxLayout>
 
 namespace {
 const QRect default_rect(100, 100, 800, 400);
 }
 
-MainWindow::MainWindow() { initSettings(); }
+MainWindow::MainWindow()
+    : QMainWindow()
+    , m_type_buttons(TypeButtonGroup::makeButtonGroup())
+{
+    initSettings();
+    auto layout = new QVBoxLayout;
+    for (auto button : m_type_buttons->buttons())
+        layout->addWidget(button);
+    setCentralWidget(new QWidget);
+    centralWidget()->setLayout(layout);
+}
 
 MainWindow::~MainWindow() { writeSettings(); }
 

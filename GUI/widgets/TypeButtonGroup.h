@@ -7,18 +7,17 @@
 //
 // ************************************************************************** //
 
-#ifndef DATATYPEBUTTONS_H
-#define DATATYPEBUTTONS_H
+#ifndef TYPEBUTTONGROUP_H
+#define TYPEBUTTONGROUP_H
 
 #include <memory>
 
 class QButtonGroup;
-class QGroupBox;
 
-namespace DataTypeButtons {
-enum TypeNames {D1 = 0, D2, NEXUS};
-std::unique_ptr<QGroupBox> createGroupBox(QButtonGroup* button_group);
-std::unique_ptr<QButtonGroup> createButtonGroup();
-}
+namespace TypeButtonGroup
+{
+  enum Types { D1 = 0, D2, NEXUS };
+  std::unique_ptr<QButtonGroup> makeButtonGroup();
+};
 
-#endif // DATATYPEBUTTONS_H
+#endif // TYPEBUTTONGROUP_H
