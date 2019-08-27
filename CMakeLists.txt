@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(scatdataloader VERSION 1.0.0 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
-
 option(SDL_TESTS_AUTOEXEC "Execute tests automatically at the end of the build" ON)
 option(SDL_TESTS_AUTODISCOVERY "Auto discover tests and add to ctest" ON)
 
