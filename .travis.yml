@@ -1,0 +1,17 @@
+language: cpp
+sudo: required
+
+matrix:
+  include:
+    - os: linux
+      dist: bionic
+      env: BUILD_TYPE=Release
+    - os: osx
+      osx_image: xcode10.3
+      env: BUILD_TYPE=Release
+
+install:
+- .travis/${TRAVIS_OS_NAME}/install.sh
+
+script:
+- .travis/${TRAVIS_OS_NAME}/build.sh
