@@ -13,7 +13,7 @@
 #include <QMainWindow>
 #include <memory>
 
-class QButtonGroup;
+class TypeSelector;
 
 //! Application main window.
 
@@ -26,7 +26,7 @@ private:
   void initSettings();
   void writeSettings() const;
 
-  std::unique_ptr<QButtonGroup> m_type_buttons;
+  std::unique_ptr<TypeSelector> m_type_buttons;
 };
 
 #endif // MAINWINDOW_H

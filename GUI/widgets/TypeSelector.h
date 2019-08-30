@@ -7,17 +7,24 @@
 //
 // ************************************************************************** //
 
-#ifndef TYPEBUTTONGROUP_H
-#define TYPEBUTTONGROUP_H
+#ifndef TYPESELECTOR_H
+#define TYPESELECTOR_H
 
-#include <memory>
+#include <QButtonGroup>
 
-class QButtonGroup;
+//! Controller for data type selection
 
-namespace TypeButtonGroup
+class TypeSelector : public QButtonGroup
 {
+public:
   enum Types { D1 = 0, D2, NEXUS };
-  std::unique_ptr<QButtonGroup> makeButtonGroup();
+
+  TypeSelector(QObject* parent = nullptr);
+  ~TypeSelector() override;
+
+private:
+  void initSettings();
+  void writeSettings() const;
 };
 
-#endif // TYPEBUTTONGROUP_H
+#endif // TYPESELECTOR_H
