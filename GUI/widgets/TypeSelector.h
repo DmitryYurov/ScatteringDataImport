@@ -17,14 +17,19 @@
 class TypeSelector : public QButtonGroup
 {
 public:
-  enum Types { D1 = 0, D2, NEXUS };
+    enum Types
+    {
+        D1 = 0,
+        D2,
+        NEXUS
+    };
 
-  TypeSelector(QObject* parent = nullptr);
-  ~TypeSelector() override;
+    TypeSelector(QObject* parent = nullptr);
+    ~TypeSelector() override;
 
 private:
-  void initSettings();
-  void writeSettings() const;
+    void initSettings();
+    void writeSettings() const;
 };
 
 #endif // TYPESELECTOR_H

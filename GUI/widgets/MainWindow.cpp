@@ -16,13 +16,12 @@
 #include <QSettings>
 #include <QVBoxLayout>
 
-namespace {
+namespace
+{
 const QRect default_rect(100, 100, 800, 400);
 }
 
-MainWindow::MainWindow()
-    : QMainWindow()
-    , m_type_buttons(new TypeSelector)
+MainWindow::MainWindow() : QMainWindow(), m_type_buttons(new TypeSelector)
 {
     initSettings();
     auto layout = new QVBoxLayout;
@@ -32,16 +31,20 @@ MainWindow::MainWindow()
     centralWidget()->setLayout(layout);
 }
 
-MainWindow::~MainWindow() { writeSettings(); }
-
-void MainWindow::initSettings() {
-  SettingsList::initSettings();
-  QSettings settings;
-  setGeometry(
-      settings.value(SettingsList::mainwindow_rect, default_rect).toRect());
+MainWindow::~MainWindow()
+{
+    writeSettings();
 }
 
-void MainWindow::writeSettings() const {
-  QSettings settings;
-  settings.setValue(SettingsList::mainwindow_rect, geometry());
+void MainWindow::initSettings()
+{
+    SettingsList::initSettings();
+    QSettings settings;
+    setGeometry(settings.value(SettingsList::mainwindow_rect, default_rect).toRect());
+}
+
+void MainWindow::writeSettings() const
+{
+    QSettings settings;
+    settings.setValue(SettingsList::mainwindow_rect, geometry());
 }

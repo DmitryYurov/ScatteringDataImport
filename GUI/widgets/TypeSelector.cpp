@@ -7,26 +7,27 @@
 //
 // ************************************************************************** //
 
-#include "TypeSelector.h"
 #include "SettingsList.h"
+#include "TypeSelector.h"
 #include <QButtonGroup>
 #include <QPushButton>
 #include <QSettings>
 #include <array>
 
-namespace {
+namespace
+{
 constexpr std::array data_names{std::pair{TypeSelector::D1, "1D Data"},
                                 std::pair{TypeSelector::D2, "2D Data"},
                                 std::pair{TypeSelector::NEXUS, "NEXUS"}};
 } // namespace
 
-TypeSelector::TypeSelector(QObject* parent)
-    : QButtonGroup (parent)
+TypeSelector::TypeSelector(QObject* parent) : QButtonGroup(parent)
 {
-    for (const auto &pair : data_names) {
-      auto button = new QPushButton(pair.second);
-      button->setCheckable(true);
-      addButton(button, pair.first);
+    for (const auto& pair : data_names)
+    {
+        auto button = new QPushButton(pair.second);
+        button->setCheckable(true);
+        addButton(button, pair.first);
     }
     setExclusive(true);
     initSettings();

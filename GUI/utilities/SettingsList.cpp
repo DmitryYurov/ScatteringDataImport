@@ -10,18 +10,19 @@
 #include "SettingsList.h"
 #include <QCoreApplication>
 
-namespace  {
+namespace
+{
 constexpr const char* app_name = "Data Loader";
 constexpr const char* app_ver = "0.0";
 constexpr const char* app_org = "scgmlz";
-}
+} // namespace
 
 void SettingsList::initSettings()
 {
-    if (QCoreApplication::applicationName() != app_name) {
+    if (QCoreApplication::applicationName() != app_name)
+    {
         QCoreApplication::setApplicationName(app_name);
         QCoreApplication::setApplicationVersion(app_ver);
         QCoreApplication::setOrganizationName(app_org);
     }
 }
-
