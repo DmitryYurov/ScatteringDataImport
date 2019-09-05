@@ -11,6 +11,7 @@
 #define TYPESELECTOR_H
 
 #include <QButtonGroup>
+#include <array>
 
 //! Controller for data type selection
 
@@ -23,6 +24,8 @@ public:
         D2,
         NEXUS
     };
+
+    static constexpr std::array<Types, 3> availableTypes() { return {D1, D2, NEXUS}; }
 
     TypeSelector(QObject* parent = nullptr);
     ~TypeSelector() override;

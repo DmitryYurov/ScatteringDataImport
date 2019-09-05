@@ -17,16 +17,18 @@ class TypeSelector;
 
 //! Application main window.
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
 public:
-  MainWindow();
-  ~MainWindow() override;
+    MainWindow();
+    ~MainWindow() override;
 
 private:
-  void initSettings();
-  void writeSettings() const;
+    void initSettings();
+    void writeSettings() const;
+    void setupCentralWidget();
 
-  std::unique_ptr<TypeSelector> m_type_buttons;
+    TypeSelector* m_type_buttons;
 };
 
 #endif // MAINWINDOW_H
